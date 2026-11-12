@@ -2,7 +2,13 @@
 
 All notable changes are recorded here. TSG follows Semantic Versioning.
 
-## [Unreleased]
+## [0.2.5] - 2026-11-12
+
+### Security
+
+- Upgrade rusqlite to 0.41 and bundled SQLite to a patched release for
+  RUSTSEC-2026-0459 (CVE-2026-119375). Public APIs and persisted formats remain
+  unchanged.
 
 ### Changed
 
