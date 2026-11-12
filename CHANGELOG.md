@@ -2,6 +2,13 @@
 
 All notable changes are recorded here. TSG follows Semantic Versioning.
 
+## [Unreleased]
+
+### Changed
+
+- Use diagnostic equality assertions for empty collections to satisfy Rust 1.99
+  Clippy without changing test behavior.
+
 ## [0.2.5] - 2026-11-12
 
 ### Security

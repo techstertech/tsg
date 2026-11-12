@@ -70,11 +70,11 @@ fn delete_cascades_and_remains_correct_after_reopen() {
         assert!(receipt.accelerator_ready);
         assert_eq!(store.stats().unwrap().edge_count, 0);
         assert_eq!(store.embedding_count().unwrap(), 2);
-        assert!(
+        assert_eq!(
             store
                 .traverse("node-0", Direction::Outgoing, None, 2, 10)
-                .unwrap()
-                .is_empty()
+                .unwrap(),
+            Vec::<tsg::Node>::new()
         );
     }
 

@@ -473,11 +473,9 @@ mod tests {
             .unwrap();
         assert!((edges[0].weight - 1.0).abs() < f64::EPSILON);
         assert!(store.delete_edge(&edges[0].id).unwrap());
-        assert!(
-            store
-                .get_edges("node-0", Direction::Both, None)
-                .unwrap()
-                .is_empty()
+        assert_eq!(
+            store.get_edges("node-0", Direction::Both, None).unwrap(),
+            Vec::<Edge>::new()
         );
     }
 

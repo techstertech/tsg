@@ -61,7 +61,7 @@ fn attribute_hits_misses_scope_and_pagination_preserve_semantics() {
             serde_json::json!("absent"),
             serde_json::json!("' OR 1=1 --"),
         ] {
-            assert!(
+            assert_eq!(
                 store
                     .find_nodes_by_attribute(
                         scope,
@@ -72,8 +72,8 @@ fn attribute_hits_misses_scope_and_pagination_preserve_semantics() {
                         1,
                         0
                     )
-                    .unwrap()
-                    .is_empty()
+                    .unwrap(),
+                Vec::<tsg::Node>::new()
             );
         }
     }
