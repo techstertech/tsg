@@ -17,3 +17,8 @@ cargo package --allow-dirty
 Behavior changes require tests. Storage changes require migration, recovery,
 and backward-compatibility coverage. Do not weaken durability or application-scope
 isolation silently.
+
+Before tagging a release, run these checks with the same current stable Rust
+version used by GitHub Actions. The minimum supported Rust version can pass
+while a newer Clippy rejects existing tests. Keep published tags immutable;
+fix test-only lint changes on `main` and record the difference in release evidence.
